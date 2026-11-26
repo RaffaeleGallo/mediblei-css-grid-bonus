@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mediblei | Bonus CSS Grid</title>
+    <link rel="icon" type="image/png" href="img/logo-mediblei.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main class="container">
+        <header class="profile-placeholder">
+            <h1>Mediblei APS — bonus Grid</h1>
+            <p>Qui ricostruiremo il profilo, dopo aver completato la griglia.</p>
+        </header>
+
+        <section class="posts" aria-labelledby="posts-title">
+            <h2 id="posts-title">Post</h2>
+            <!-- Il primo post occupa due colonne e due righe; gli altri riempiono le celle libere. -->
+            <div class="posts-grid">
+                <div class="post post-featured">
+                    <img src="img/mostra-antonio-vacirca.jpg" alt="Visitatori alla mostra fotografica di Antonio Vacirca a Spazio San Sebastiano">
+                </div>
+                <div class="post">
+                    <img src="img/incipit.jpg" alt="Teatro antico in pietra con il titolo Incipit">
+                </div>
+                <div class="post">
+                    <img src="img/saluti-dallo-spazio.jpg" alt="Fotomontaggio di gruppo in tute da astronauta: Saluti dallo spazio">
+                </div>
+
+                <div class="post">
+                    <img class="post-image-top" src="img/mostri-agata-leocata.jpg" alt="Locandina Mostri, elogio dell’imperfezione di Agata Leocata, con una creatura dipinta">
+                </div>
+                <div class="post">
+                    <img src="img/capolettera-angelo-ruta.jpg" alt="Locandina Capolettera incontra Angelo Ruta, con volti tra foglie verdi">
+                </div>
+                <div class="post">
+                    <img class="post-image-top" src="img/itinerari-di-coraggio.jpg" alt="Locandina Itinerari di coraggio, cent’anni di Pippo Fava, con ritratto e scritte arancioni">
+                </div>
+            </div>
+        </section>
+
+    </main>
+</body>
+
+</html>
