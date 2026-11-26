@@ -4,7 +4,7 @@ Questo esercizio riparte dalla griglia fotografica, con un placeholder superiore
 
 ## Passo 1 — griglia con elementi su più celle (realizzato)
 
-Sei fotografie: la foto della mostra di Antonio Vacirca è il primo elemento e occupa due colonne e due righe. Gli altri cinque post riempiono le celle libere.
+Sei fotografie: la foto dei balconi e della targa di Giuseppe Fava è il primo elemento e occupa due colonne e due righe. Gli altri cinque post riempiono le celle libere.
 
 ```text
 A A B
@@ -38,4 +38,20 @@ git commit -m "feat: costruisce la griglia fotografica bonus con span"
 
 I passi 2–4 non sono ancora applicati: lo studente può controllare e committare ogni fase prima della successiva.
 
-Le immagini sono quelle già selezionate per l'esercizio Mediblei. I file originali restano integri; il ritaglio avviene nel CSS.
+## Passo 1b — nuove fotografie (realizzato)
+
+Sostituite le sei immagini con le foto del carosello di Itinerari di coraggio, nell'ordine richiesto: **1, 2, 4, 5, 7, 9**. La prima resta nel riquadro grande. Foto: Carla Sigona, come indicato nel post originale.
+
+- Riquadro 1: [foto 1](https://www.instagram.com/p/DOqfCX8DD0j/?img_index=1) — `img/itinerari-coraggio-01.jpg`.
+- Riquadro 2: [foto 2](https://www.instagram.com/p/DOqfCX8DD0j/?img_index=2) — `img/itinerari-coraggio-02.jpg`.
+- Riquadro 3: [foto 4](https://www.instagram.com/p/DOqfCX8DD0j/?img_index=4) — `img/itinerari-coraggio-04.jpg`.
+- Riquadro 4: [foto 5](https://www.instagram.com/p/DOqfCX8DD0j/?img_index=5) — `img/itinerari-coraggio-05.jpg`.
+- Riquadro 5: [foto 7](https://www.instagram.com/p/DOqfCX8DD0j/?img_index=7) — `img/itinerari-coraggio-07.jpg`.
+- Riquadro 6: [foto 9](https://www.instagram.com/p/DOqfCX8DD0j/?img_index=9) — `img/itinerari-coraggio-09.jpg`.
+
+I file scaricati sono integri; `object-fit: cover` gestisce il ritaglio nelle celle. Rimossa la regola di allineamento superiore delle precedenti locandine.
+
+```bash
+git add index.html css/style.css img/ README.md
+git commit -m "content: aggiorna le foto della griglia bonus"
+```

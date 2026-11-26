@@ -55,10 +55,6 @@ body {
     object-fit: cover;
 }
 
-.post-image-top {
-    object-position: center top;
-}
-
 /* Ripristiniamo celle singole sui telefoni. */
 @media (max-width: 600px) {
     .posts-grid {
