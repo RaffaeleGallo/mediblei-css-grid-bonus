@@ -17,10 +17,53 @@ body {
     margin: 32px auto;
 }
 
-.profile-placeholder {
+/* Passo 4: profilo centrato sopra la griglia. */
+.profile {
     padding: 32px 16px;
-    background-color: #eee;
     text-align: center;
+}
+
+.profile-avatar {
+    display: block;
+    width: 150px;
+    height: 150px;
+    margin: 24px auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-username {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.profile-bio {
+    max-width: 480px;
+    margin: 24px auto 12px;
+    line-height: 1.3;
+}
+
+.profile-website {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 20px;
+    color: #bf1730;
+    font-weight: bold;
+}
+
+/* Un collegamento con l'aspetto di un pulsante. */
+.profile-instagram {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #bf1730;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.profile a:focus-visible {
+    outline: 3px solid #222;
+    outline-offset: 4px;
 }
 
 .posts {

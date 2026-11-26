@@ -1,6 +1,6 @@
 # Mediblei — ricostruzione con CSS Grid: bonus
 
-Questo esercizio riparte dalla griglia fotografica, con un placeholder superiore. Il progetto originale `mediblei-css-grid` resta separato.
+Questo esercizio è partito dalla griglia fotografica con un placeholder superiore, sostituito dal profilo nello step 4. Il progetto originale `mediblei-css-grid` resta separato.
 
 ## Passo 1 — griglia con elementi su più celle (realizzato)
 
@@ -30,14 +30,6 @@ git add index.html css/ img/ README.md .gitignore
 git commit -m "feat: costruisce la griglia fotografica bonus con span"
 ```
 
-## Ricostruzione successiva — un commit per passo
-
-2. Sostituire il placeholder con logo, username e statistiche dimostrative. Commit: `feat: ricostruisce il profilo nel bonus`.
-3. Inserire Follow verso TikTok, Instagram, freccia dimostrativa, biografia e sito con pseudo-classi. Commit: `feat: completa contenuti e azioni del profilo bonus`.
-4. Rifinire spaziature, colori, ritagli delle immagini e responsive. Verificare desktop e mobile. Commit: `style: rifinisce la pagina bonus responsive`.
-
-I passi 2–4 non sono ancora applicati: lo studente può controllare e committare ogni fase prima della successiva.
-
 ## Passo 1b — nuove fotografie (realizzato)
 
 Sostituite le sei immagini con le foto del carosello di Itinerari di coraggio, nell'ordine richiesto: **1, 2, 4, 5, 7, 9**. La prima resta nel riquadro grande. Foto: Carla Sigona, come indicato nel post originale.
@@ -55,3 +47,32 @@ I file scaricati sono integri; `object-fit: cover` gestisce il ritaglio nelle ce
 git add index.html css/style.css img/ README.md
 git commit -m "content: aggiorna le foto della griglia bonus"
 ```
+
+## Step 4 — profilo Mediblei (realizzato)
+
+Da questo punto riprendiamo la numerazione della versione standard.
+Il placeholder è sostituito da nome, logo circolare, username, biografia, sito e collegamento Instagram.
+
+- `border-radius: 50%` rende circolare il logo quadrato.
+- `display: block` e `margin: 24px auto` centrano il logo.
+- `text-align: center` centra testi e collegamenti.
+- `max-width: 480px` limita la larghezza della biografia; `line-height: 1.3` mantiene le righe compatte.
+- Instagram è un tag `<a>` con aspetto di pulsante.
+- `:focus-visible` rende riconoscibili i link durante la navigazione con Tab.
+
+La griglia bonus conserva le sei foto selezionate e il primo elemento su due colonne e due righe.
+
+Controllo manuale: aprire la pagina, verificare il profilo sopra i post e usare Tab per raggiungere sito e Instagram.
+
+```bash
+git add index.html css/style.css README.md
+git commit -m "feat: aggiunge il profilo Mediblei alla griglia bonus"
+```
+
+### Passaggi successivi
+
+- Ripasso dei selettori: stati del link al sito e pseudo-elemento decorativo.
+- Step 5: rifiniture di colori, spaziature e profilo responsive.
+- Completamento come nel riferimento: statistiche dimostrative, Follow, icona Instagram e freccia.
+
+Ogni fase viene applicata e committata separatamente dallo studente.
