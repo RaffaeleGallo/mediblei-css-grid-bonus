@@ -69,10 +69,24 @@ git add index.html css/style.css README.md
 git commit -m "feat: aggiunge il profilo Mediblei alla griglia bonus"
 ```
 
-### Passaggi successivi
+## Step 5 — rifiniture della versione finale (realizzato)
 
-- Ripasso dei selettori: stati del link al sito e pseudo-elemento decorativo.
-- Step 5: rifiniture di colori, spaziature e profilo responsive.
-- Completamento come nel riferimento: statistiche dimostrative, Follow, icona Instagram e freccia.
+Riprese le rifiniture del progetto principale, conservando la griglia bonus e le foto 1, 2, 4, 5, 7 e 9.
 
-Ogni fase viene applicata e committata separatamente dallo studente.
+- Ordine del profilo: titolo, logo, username, statistiche, pulsanti, biografia e sito.
+- Statistiche dimostrative: 164 seguiti, 1.9K follower e 12.5K mi piace. Non sono dati reali verificati.
+- Follow apre TikTok; l'icona Instagram apre il profilo Instagram. La freccia è dimostrativa e non apre un menu.
+- Logo con bordo rosso e ombra, spaziature uniformi, separatore e sottolineatura del titolo Post, foto con angoli arrotondati.
+- Biografia compatta con `line-height: 1.3`.
+- Link al sito con `:link`, `:visited`, `:hover`, `:focus`, `:active` e freccia decorativa `::after`. `:active` vale durante la pressione; `:visited` dipende dalla cronologia del browser.
+- Focus visibile da tastiera e transizioni disattivate con `prefers-reduced-motion`.
+- Desktop: tre colonne, righe da 220 px, primo post su due righe e due colonne.
+- Fino a 600 px: due colonne, righe da 200 px, span annullati e profilo più compatto.
+- Fino a 360 px: una colonna con righe da 320 px.
+
+Controllo manuale: verificare desktop e mobile, focus con Tab, stati del sito, collegamenti social e assenza di scorrimento orizzontale. Le foto restano integre: il ritaglio è gestito da `object-fit: cover`.
+
+```bash
+git add index.html css/style.css README.md
+git commit -m "style: completa le rifiniture del progetto bonus"
+```

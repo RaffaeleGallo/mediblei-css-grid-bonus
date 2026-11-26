@@ -1,4 +1,4 @@
-/* Passo 1: struttura e griglia del bonus, prima delle rifiniture. */
+/* Reset di base: padding e bordi sono inclusi nelle dimensioni. */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -9,17 +9,19 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
     color: #222;
+    background-color: #fff;
 }
 
+/* Contenitore centrato, con spazio ai lati anche sugli schermi piccoli. */
 .container {
     width: 90%;
     max-width: 900px;
-    margin: 32px auto;
+    margin: 48px auto 64px;
 }
 
-/* Passo 4: profilo centrato sopra la griglia. */
+/* Profilo centrato sopra la griglia. */
 .profile {
-    padding: 32px 16px;
+    padding: 24px 16px 32px;
     text-align: center;
 }
 
@@ -27,14 +29,22 @@ body {
     display: block;
     width: 150px;
     height: 150px;
-    margin: 24px auto;
+    margin: 36px auto 24px;
+    border: 4px solid #fff;
     border-radius: 50%;
+    box-shadow: 0 0 0 2px #bf1730, 0 6px 18px #00000014;
     object-fit: cover;
+}
+
+.profile h1 {
+    font-size: 24px;
+    line-height: 1.2;
 }
 
 .profile-username {
     font-size: 24px;
     font-weight: bold;
+    color: #222;
 }
 
 .profile-bio {
@@ -43,22 +53,138 @@ body {
     line-height: 1.3;
 }
 
+.profile-bio p + p {
+    margin-top: 0;
+}
+
+/* Selettore di classe: stile di base del collegamento al sito. */
 .profile-website {
     display: block;
     width: fit-content;
-    margin: 0 auto 20px;
+    margin: 0 auto;
+    padding: 8px 14px;
     color: #bf1730;
+    background-color: #fff5f6;
+    border: 1px solid #e8b6bf;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+/* Pseudo-elemento: aggiunge una freccia decorativa dopo il testo. */
+.profile-website::after {
+    content: " →";
+}
+
+/* Ordine: link non visitato, visitato, hover/focus e infine active. */
+.profile-website:link {
+    color: #bf1730;
+}
+
+/* Il browser determina se questo indirizzo risulta già visitato. */
+.profile-website:visited {
+    color: #704080;
+}
+
+/* Stesso risalto con il mouse e con la navigazione da tastiera. */
+.profile-website:hover,
+.profile-website:focus {
+    color: #941127;
+    background-color: #fce3e8;
+    border-color: #bf1730;
+}
+
+/* Si attiva mentre si tiene premuto il collegamento. */
+.profile-website:active {
+    color: #fff;
+    background-color: #941127;
+    border-color: #941127;
+}
+
+/* Flexbox allinea statistiche e pulsanti su una sola riga. */
+.profile-stats {
+    display: flex;
+    justify-content: space-between;
+    max-width: 360px;
+    margin: 28px auto;
+    list-style: none;
+}
+
+.profile-stats li {
+    flex: 1;
+}
+
+.profile-stats strong,
+.profile-stats span {
+    display: block;
+}
+
+.profile-stats strong {
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+.profile-stats span {
+    margin-top: 4px;
+    color: #666;
+    font-size: 15px;
+}
+
+.profile-actions {
+    display: flex;
+    gap: 12px;
+    max-width: 360px;
+    margin: 0 auto;
+}
+
+.profile-follow,
+.profile-instagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 56px;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+/* Follow è un collegamento a TikTok: non esegue automaticamente il follow. */
+.profile-follow {
+    flex: 1;
+    background-color: #bf1730;
+    border-color: #bf1730;
+    color: #fff;
+    font-size: 20px;
     font-weight: bold;
 }
 
-/* Un collegamento con l'aspetto di un pulsante. */
 .profile-instagram {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: #bf1730;
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
+    flex: 0 0 56px;
+    background-color: #fff;
+    color: #222;
+}
+
+.profile-follow:hover,
+.profile-follow:focus-visible {
+    background-color: #9e1328;
+    border-color: #9e1328;
+}
+
+.profile-follow:active {
+    background-color: #791020;
+}
+
+.profile-instagram:hover,
+.profile-instagram:focus-visible {
+    background-color: #fff5f6;
+    border-color: #bf1730;
+    color: #bf1730;
+}
+
+.profile-instagram:active {
+    background-color: #fce3e8;
 }
 
 .profile a:focus-visible {
@@ -67,9 +193,19 @@ body {
 }
 
 .posts {
-    margin-top: 32px;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid #e7dadd;
 }
 
+.posts h2 {
+    width: fit-content;
+    padding-bottom: 8px;
+    border-bottom: 3px solid #bf1730;
+    font-size: 20px;
+}
+
+/* Grid container: tre colonne uguali e spazio tra righe e colonne. */
 .posts-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -78,19 +214,16 @@ body {
     margin-top: 16px;
 }
 
+/* Le dimensioni dei post dipendono dalle righe e colonne della griglia. */
 .post {
-    min-width: 0;
     min-height: 0;
+    min-width: 0;
     overflow: hidden;
     background-color: #eee;
+    border-radius: 6px;
 }
 
-/* Le estensioni si assegnano al figlio della griglia. */
-.post-featured {
-    grid-column: span 2;
-    grid-row: span 2;
-}
-
+/* L'immagine riempie il post senza deformarsi: l'eccesso viene ritagliato. */
 .post img {
     display: block;
     width: 100%;
@@ -98,22 +231,89 @@ body {
     object-fit: cover;
 }
 
-/* Ripristiniamo celle singole sui telefoni. */
+/* Bonus: il primo post occupa due colonne e due righe. */
+.post-featured {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+/* Tablet e telefoni: due colonne e un profilo più compatto. */
 @media (max-width: 600px) {
+    .container {
+        width: 92%;
+        margin: 24px auto 40px;
+    }
+
+    .profile {
+        padding: 16px 8px 24px;
+    }
+
+    .profile-avatar {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile h1 {
+        font-size: 22px;
+    }
+
+    .profile-username {
+        font-size: 22px;
+    }
+
+    .profile-bio {
+        margin-top: 20px;
+        font-size: 15px;
+    }
+
     .posts-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         grid-auto-rows: 200px;
     }
 
+}
+
+/* Su mobile il post in evidenza torna a occupare una singola cella. */
+@media (max-width: 600px) {
     .post-featured {
         grid-column: auto;
         grid-row: auto;
     }
 }
 
+/* Schermi molto stretti: una sola colonna evita miniature troppo piccole. */
 @media (max-width: 360px) {
     .posts-grid {
         grid-template-columns: 1fr;
         grid-auto-rows: 320px;
     }
+
+}
+
+/* Rispetta la preferenza di ridurre gli effetti animati. */
+@media (prefers-reduced-motion: reduce) {
+    .profile-website,
+    .profile-follow,
+    .profile-instagram {
+        transition: none;
+    }
+}
+
+/* Pulsante dimostrativo con freccia, affiancato a Instagram. */
+.profile-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 56px;
+    min-height: 56px;
+    padding: 0;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    background-color: #fff;
+    color: #222;
+}
+
+.profile-more:focus-visible {
+    outline: 3px solid #222;
+    outline-offset: 4px;
 }
